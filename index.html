@@ -21,7 +21,7 @@
 	//4)Esperar la respuesta y gestionarla, la respuesta que me va a llegar es un string
 		conexion.addEventListener("load",function(){
 			console.log(conexion.responseText);
-		};
+		});
 		//cuando ese evento suceda, quiere decir que ya tenemos la respuesta, lo que tengo que hacer es invocar un callback y dentro del callback, a partir de la conexión, voy a tener una propiedad llamada responseText, que es literalmente el string que me ha llegado del servidor
 
 		//como tiene que trabjar con un servidor, no se va a abrr el open in browser
