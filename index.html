@@ -6,6 +6,7 @@
 	<title></title>
 </head>
 <body>
+	<ul></ul>
 	<script>
 	//1)Crear una conexión → objeto XHR 
 		const conexion = new XMLHttpRequest(); 
@@ -19,8 +20,12 @@
 		conexion.send();
 
 	//4)Esperar la respuesta y gestionarla, la respuesta que me va a llegar es un string
-		conexion.addEventListener("load",function(){
-			console.log(conexion.responseText);
+		conexion.addEventListener("load", function(){
+			conexion.responseText.split(",").forEach( palabra => {
+				let li = document.createElement("li");
+				li.innerHTML = palabra;
+				lista.appendChild(li);
+			});
 		});
 		//cuando ese evento suceda, quiere decir que ya tenemos la respuesta, lo que tengo que hacer es invocar un callback y dentro del callback, a partir de la conexión, voy a tener una propiedad llamada responseText, que es literalmente el string que me ha llegado del servidor
 
